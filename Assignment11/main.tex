@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage{graphicx}
+\graphicspath{{img/}}          % tells LaTeX where figures live
+\usepackage[margin=1in]{geometry}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{threeparttable}
+\usepackage{codehigh}
+\usepackage{caption}
+\usepackage{tabularray}
+\captionsetup{font=small, labelfont=bf}
+
+\title{AQMS Session11}
+\author{Gerardo Naranjo Franco}
+\date{April 2026}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+The graphs and tables shown in this assignment are related to my final project. Therefore, the dataset I use is personally constructed and based off the Positive Peace Report from 2024. In this analysis, I conduct a descriptive exploration of how educational attainment deviates from expected structural capabilities across a wide sample of countries. Influenced by Amartya Sen's capability theory and Johan Galtung's notion of positive peace, I argue that the captured deviations hold potential uses in the measurement and advancement of these two concepts.  
+
+The following table summarizes three models used to compute expected educational attainment across countries in the sample. The first model is build with 147 observations and it captures educational outcomes (measured as the score in the Learning-Adjusted Years of Schooling index) as a function of GDP per capita and the percentage of a population aged between 0-14.
+
+The second model captures the same relationship, but uses tax revenue per capita as an economic indicator. For this model, only 116 observations were used due to data availability.
+
+Lastly, the third model runs the same function as the first model, but employing only the 116 countries from the tax revenue model. This was conducted as a way to verify that the differences in the results from the tax model and the GDP model are not caused by the different observations. 
+\begin{table}[H]
+\centering
+\input{tab/comparison_table}
+\label{tab:regression}
+\end{table}
+
+To visualize the predictive strength of these two main models, I built a scatter plot showing the relationship between these economic indicators, the share of the youth population, and the LAYS scores. 
+
+As shown in Figure 1 and Figure 2, as well as the coefficients in Table 1, employing GDP per capita yields statistically similar results to using Tax Revenue as an economic indicator of structural capabilities in education. 
+
+\begin{figure} [h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/Figure1_Structural_Predictors}
+    \caption{Log GDP per Capita and Youth Population Share as Structural Predictors of Educational Attainment}
+    \label{fig:mylabel}
+\end{figure}
+
+\begin{figure} [h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/Figure5_Structural_Predictors_Tax}
+    \caption{Log Tax Revenue per Capita and Youth Population Share as Structural Predictors of Educational Attainment}
+    \label{fig:mylabel}
+\end{figure}
+
+
+\end{document}
